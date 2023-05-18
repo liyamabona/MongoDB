@@ -3,7 +3,7 @@ module.exports = rs => {
     const controller =require('../controllers/user.controllers')
 
 
-    router.post('signup',controller.create);//Add user
+    router.post('/signup',controller.create);//Add user
 
     router.get('/',controller.create);//get all users
 
@@ -13,5 +13,5 @@ module.exports = rs => {
 
     router.delete('/:id', controller.deleteOne)//delete a user
 
-rs.use('/v1/users',router);
+rs.use('/v1/users/',router);
 }
