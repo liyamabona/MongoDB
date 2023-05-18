@@ -15,17 +15,17 @@ const db = require('./models')
 //app.use(cors(cors0ptions));
 
 
-// app.use(express.json());
+app.use(express.json());
 
 
-// app.use(express.urlencoded({extended: true, limit: '50mb'}));
+app.use(express.urlencoded({extended: true, limit: '50mb'}));
 
 db.mongoose.connect(DB.db_url,{
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
   .then(console.log("Connected successfully"))
-  .catch(err=>{console.log("Ërror message : " + err)})
+  .catch(err=>{console.log("Error message : " + err)})
 
 initRoutes(app)
 
